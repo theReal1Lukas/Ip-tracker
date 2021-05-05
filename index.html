@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>IP Address Tracker</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid first">
+        <div class="row">
+          <div class="col-12 col-sm col-md-4 inputs text-center">
+            <div class="input-group input-group-lg mb-3">
+              <input
+                type="text"
+                name="ip"
+                id="ip"
+                class="form-control"
+                placeholder="IP Address"
+                aria-label="IP Address"
+                aria-describedby="IP Address"
+              />
+              <div class="input-group-append">
+                <button
+                  onclick="handleClick()"
+                  class="btn btn-secondary"
+                  type="button"
+                >
+                  <img src="./project-images/icon-arrow.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm col-md-4 inputs text-center">
+            <div class="input-group input-group-lg mb-3">
+              <input
+                type="text"
+                name="domain"
+                id="domain"
+                class="form-control"
+                placeholder="Domain Address"
+                aria-label="Domain Address"
+                aria-describedby="Domain Address"
+              />
+              <div class="input-group-append">
+                <button
+                  onclick="handleClick()"
+                  class="btn btn-secondary"
+                  type="button"
+                >
+                  <img src="./project-images/icon-arrow.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center hidden">
+            <button onclick="refresh()" class="btn btn-lg btn-danger refresh">
+              New Search
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="grid-container">
+            <div class="grid-item grid-item-first">
+              <p class="grid-item-header">IP ADDRESS</p>
+              <p id="ipAddress" class="grid-item-content"></p>
+            </div>
+            <div class="grid-item">
+              <div class="vl"></div>
+            </div>
+
+            <div class="grid-item">
+              <p class="grid-item-header">LOCATION</p>
+              <p id="location" class="grid-item-content"></p>
+            </div>
+            <div class="grid-item">
+              <div class="vl"></div>
+            </div>
+            <div class="grid-item">
+              <p class="grid-item-header">TIMEZONE</p>
+              <p id="timezone" class="grid-item-content"></p>
+            </div>
+            <div class="grid-item">
+              <div class="vl"></div>
+            </div>
+            <div class="grid-item grid-item-last">
+              <p class="grid-item-header">ISP</p>
+              <p id="isp" class="grid-item-content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="map"></div>
+      <div id="getMap"></div>
+    </main>
+
+    <!-- <footer>
+      <div class="container text-center">
+        <p>Coded By Lukas Budginas</p>
+      </div>
+    </footer> -->
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
+<!-- <div class="row output">
+  <div class="col-2"></div>
+  <div class="col-2 bg-white">
+    <p id="currentIp" style="color: red; border-right: 1px solid grey">
+      IP ADDRESS
+    </p>
+  </div>
+  <div class="col-2 bg-white">
+    <p id="currentIp" style="color: red">LOCATION</p>
+  </div>
+  <div class="col-2 bg-white">
+    <p id="currentIp" style="color: red">TIMEZONE</p>
+  </div>
+  <div class="col-2 bg-white">
+    <p id="currentIp" style="color: red">ISP</p>
+  </div>
+  <div class="col-2"></div>
+</div> -->
