@@ -51,8 +51,13 @@ p {
   font-size: 2rem;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
-  background-color: rgb(49, 26, 151);
-  color: lightblue;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.refresh:hover {
+  background-color: hsl(0, 0%, 17%);
+  color: white;
 }
 
 .row {
@@ -88,4 +93,10 @@ p {
   border-left: 1px solid rgb(172, 170, 170);
   height: 60px;
   z-index: 9999;
+}
+.arrow-btn {
+  background-color: hsl(0, 0%, 17%);
+}
+.arrow-btn:hover {
+  background-color: hsl(0, 0%, 59%);
 }
