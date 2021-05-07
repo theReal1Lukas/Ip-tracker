@@ -41,10 +41,15 @@
   </head>
   <body>
     <header>
-      <div class="container-fluid first">
+      <div class="container-fluid header">
         <div class="row">
-          <div class="col-12 col-sm col-md-4 inputs text-center">
-            <div class="input-group input-group-lg mb-3">
+          <div class="col-12 text-center">
+            <h2 class="main-heading">IP Address Tracker</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10 col-sm col-md-4 inputs text-center">
+            <div class="input-group input-group-md mb-3">
               <input
                 type="text"
                 name="ip"
@@ -65,8 +70,9 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm col-md-4 inputs text-center">
-            <div class="input-group input-group-lg mb-3">
+
+          <div class="col-10 col-sm col-md-4 inputs text-center">
+            <div class="input-group input-group-md mb-3">
               <input
                 type="text"
                 name="domain"
@@ -87,39 +93,38 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 text-center hidden">
             <button onclick="refresh()" class="btn refresh">New Search</button>
           </div>
         </div>
-        <div class="row">
-          <div class="grid-container">
-            <div class="grid-item grid-item-first">
-              <p class="grid-item-header">IP ADDRESS</p>
-              <p id="ipAddress" class="grid-item-content"></p>
-            </div>
-            <div class="grid-item">
-              <div class="vl"></div>
-            </div>
 
-            <div class="grid-item">
-              <p class="grid-item-header">LOCATION</p>
-              <p id="location" class="grid-item-content"></p>
-            </div>
-            <div class="grid-item">
-              <div class="vl"></div>
-            </div>
-            <div class="grid-item">
-              <p class="grid-item-header">TIMEZONE</p>
-              <p id="timezone" class="grid-item-content"></p>
-            </div>
-            <div class="grid-item">
-              <div class="vl"></div>
-            </div>
-            <div class="grid-item grid-item-last">
-              <p class="grid-item-header">ISP</p>
-              <p id="isp" class="grid-item-content"></p>
+        <div class="row">
+          <div class="col-12 col-md-1"></div>
+          <div class="col-10 col-sm-5 col-md col-output first">
+            <div class="vertical-line">
+              <p class="item-header">IP ADDRESS</p>
+              <p id="ipAddress" class="item-content"></p>
             </div>
           </div>
+
+          <div class="col-10 col-sm-5 col-md col-output second">
+            <div class="vertical-line">
+              <p class="item-header">LOCATION</p>
+              <p id="location" class="item-content"><br /></p>
+            </div>
+          </div>
+          <div class="col-10 col-sm-5 col-md col-output third">
+            <div class="vertical-line">
+              <p class="item-header">TIMEZONE</p>
+              <p id="timezone" class="item-content"></p>
+            </div>
+          </div>
+          <div class="col-10 col-sm-5 col-md col-output last">
+            <p class="item-header">ISP</p>
+            <p id="isp" class="item-content"></p>
+          </div>
+          <div class="col-12 col-md-1"></div>
         </div>
       </div>
     </header>
@@ -128,30 +133,6 @@
       <div id="getMap"></div>
     </main>
 
-    <!-- <footer>
-      <div class="container text-center">
-        <p>Coded By Lukas Budginas</p>
-      </div>
-    </footer> -->
-
     <script src="scripts.js"></script>
   </body>
 </html>
-<!-- <div class="row output">
-  <div class="col-2"></div>
-  <div class="col-2 bg-white">
-    <p id="currentIp" style="color: red; border-right: 1px solid grey">
-      IP ADDRESS
-    </p>
-  </div>
-  <div class="col-2 bg-white">
-    <p id="currentIp" style="color: red">LOCATION</p>
-  </div>
-  <div class="col-2 bg-white">
-    <p id="currentIp" style="color: red">TIMEZONE</p>
-  </div>
-  <div class="col-2 bg-white">
-    <p id="currentIp" style="color: red">ISP</p>
-  </div>
-  <div class="col-2"></div>
-</div> -->
