@@ -32,7 +32,7 @@ $.getJSON(`https://api.ipdata.co?api-key=${apiKey}`, function (data) {
   ).addTo(mymap);
 
   const visitorIp = data.ip;
-  const visitorLocation = `${data.region}, ${data.city}`;
+  const visitorLocation = `${data.city}, ${data.country_code}`;
   const visitorTimeZone = data.time_zone.offset;
   const visitorIsp = data.asn.name;
   document.getElementById("ipAddress").innerHTML = visitorIp;
@@ -87,7 +87,7 @@ function handleClick() {
     }).addTo(getmymap);
 
     const foundIp = data.ip;
-    const foundLocation = `${data.location.region}, ${data.location.city}`;
+    const foundLocation = `${data.location.city}, ${data.location.country}`;
     const foundTimeZone = data.location.timezone;
     const foundIsp = data.isp;
     document.getElementById("ipAddress").innerHTML = foundIp;
