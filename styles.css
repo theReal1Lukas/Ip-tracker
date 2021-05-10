@@ -9,12 +9,7 @@ p {
   font-weight: 600;
   letter-spacing: 1px;
 }
-.item-content {
-  color: hsl(0, 0%, 17%);
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0 0 0 20px;
-}
+
 #map {
   height: 65vh;
 }
@@ -32,15 +27,13 @@ p {
 }
 
 .main-heading {
-  margin-top: 2vh;
   color: white;
-  /* font-weight: 700; */
+  margin: 10px 0 0 0;
   letter-spacing: 2px;
 }
 
 .inputs {
-  margin-top: 1vh;
-  /* margin-bottom: 5vh; */
+  margin: 25px 0 25px 0;
 }
 
 .first,
@@ -61,7 +54,7 @@ p {
 
 .hidden {
   display: none;
-  margin-bottom: 2vh;
+  margin: 25px 0 35px 0;
 }
 
 .refresh {
@@ -84,7 +77,6 @@ p {
 }
 
 .col-output {
-  margin-top: 1vh;
   background-color: white;
   z-index: 999;
   padding-bottom: 20px;
@@ -92,6 +84,13 @@ p {
 
 .item-header {
   margin: 20px 0 0 20px;
+}
+
+.item-content {
+  color: hsl(0, 0%, 17%);
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 0 0 20px;
 }
 
 .arrow-btn {
@@ -151,15 +150,20 @@ p {
     margin: 0;
     padding: 0;
   }
+  .row-output {
+    margin-top: 50px;
+  }
   .second {
     margin: 0;
     border-radius: 0;
-    min-height: 90px;
+    height: 90px;
+
     text-align: center;
   }
   .first {
     border-top-right-radius: 10px;
     height: 90px;
+
     text-align: center;
   }
 
@@ -167,11 +171,12 @@ p {
     margin: 0;
     border-radius: 0;
     height: 90px;
+
     text-align: center;
   }
   .last {
     border-bottom-left-radius: 10px;
-    min-height: 90px;
+    height: 90px;
     text-align: center;
   }
   .item-content {

@@ -1,7 +1,5 @@
 "use strict";
 
-//  Map ////////////////////
-
 // Visitor Ip/////////////////
 function json(url) {
   return fetch(url).then((res) => res.json());
@@ -45,6 +43,8 @@ $.getJSON(`https://api.ipdata.co?api-key=${apiKey}`, function (data) {
 
 /////////////////
 
+// output ////////////
+
 function handleClick() {
   $("#map").css("display", "none");
   $("#getMap").css("display", "block");
@@ -64,7 +64,6 @@ function handleClick() {
   $.getJSON(ipUrl, function (data) {
     const getLat = data.location.lat;
     const getIng = data.location.lng;
-    console.log(getLat, getIng);
     let getmymap = L.map("getMap").setView([getLat, getIng], 20);
 
     L.tileLayer(
